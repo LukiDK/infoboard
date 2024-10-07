@@ -20,7 +20,6 @@
 //             console.log(error)
 //         })
 // }
-
 function getRejseplan() {
     fetch('https://xmlopen.rejseplanen.dk/bin/rest.exe/multiDepartureBoard?id1=851400602&id2=851973402&rttime&format=json&useBus=1')
         .then((response) => {
@@ -28,11 +27,11 @@ function getRejseplan() {
                 throw new Error(`${response.status}`);
             }
 
-            console.log(response)
+            console.log(response);
             return response.json();
         })
         .then((data) => {
-            const container = document.getElementById('bus');
+            let container = document.getElementById('bus');
             container.innerHTML = '';
     
             if (data && Array.isArray(data)) {
@@ -52,7 +51,7 @@ function getRejseplan() {
         .catch((error) => {
             console.error(error);
 
-            const container = document.getElementById('bus');
+            let container = document.getElementById('bus');
             container.innerHTML = "Error: Kunne ikke fetch data.";
         });
 }
