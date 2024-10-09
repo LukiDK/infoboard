@@ -11,6 +11,7 @@ function getBusData() {
         .then(data => {
             console.log(data); // Log the entire response to understand its structure
             const departures = data.MultiDepartureBoard.Departure;
+            const nextBus = data.MultiDepartureBoard.Departure[0];
 
             if (!departures) {
                 console.error('Ingen buser fundet.');
@@ -23,14 +24,22 @@ function getBusData() {
                 const row = document.createElement('div');
                 // Adjust these fields according to the actual response structure
                 row.classList.toggle('buscard');
-                row.innerHTML = `
+
+                if (departure === nextBus) {
+                    row.classList.add('nextbus');
+                    row.innerHTML = `<p>${departure.name + ' ' + departure.type + ' ' + departure.stop + ' ' + departure.time || 'N/A'}</p>`;
+                
+                } else {
+                    row.innerHTML = `
                     <p>
                     ${departure.name || 'N/A'}
                     ${departure.type || 'N/A'}
                     ${departure.stop || 'N/A'}
                     ${departure.time || 'N/A'}
                     </p>
-                `;
+                    `;
+                }
+
                 buses.appendChild(row);
             });
         })

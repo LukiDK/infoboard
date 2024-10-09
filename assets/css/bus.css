@@ -1,9 +1,25 @@
 #buses {
+    position: relative;
     width: fit-content;
     padding: 1rem;
-    border: 1px solid black;
+    margin-top: 5rem;
+    border: 2px solid black;
     border-radius: 8px;
 }
+
+.nextbus {
+    display: flex;
+    background-color: yellow;
+    font-family: '';
+}
+
 .buscard {
     
+}
+
+i {
+    position: absolute;
+    font-size: 5rem;
+    left: 40%;
+    top: -7%;
 }
