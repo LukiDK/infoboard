@@ -14,7 +14,7 @@ function getBusData() {
 
             if (!departures) {
                 console.error('No departures found');
-                document.getElementById('buses').innerHTML = '<figure><p colspan="4">Ingen Data.</p></figure>';
+                document.getElementById('buses').innerHTML = '<p colspan="4">Ingen Data.</p><';
                 return;
             }
 
@@ -22,6 +22,7 @@ function getBusData() {
             departures.forEach(departure => {
                 const row = document.createElement('div');
                 // Adjust these fields according to the actual response structure
+                row.classList.toggle('buscard');
                 row.innerHTML = `
                     <p>
                     ${departure.name || 'N/A'}
@@ -35,7 +36,7 @@ function getBusData() {
         })
         .catch(error => {
             console.error('Error Fetching Data:', error);
-            document.getElementById('buses').innerHTML = '<figure><p colspan="4">Error loading data</p></figure>';
+            document.getElementById('buses').innerHTML = '<p colspan="4">Error loading data</p>';
         });
 }
 
