@@ -20,7 +20,7 @@ function getBusData() {
 
             const buses = document.getElementById('buses');
             departures.forEach(departure => {
-                const row = document.createElement('figure');
+                const row = document.createElement('div');
                 // Adjust these fields according to the actual response structure
                 row.innerHTML = `
                     <p>
