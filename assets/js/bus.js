@@ -9,7 +9,7 @@ function getBusData() {
             return response.json();
         })
         .then(data => {
-            console.log(data); // Log the entire response to understand its structure
+            console.log(data);
             const departures = data.MultiDepartureBoard.Departure;
             const nextBus = data.MultiDepartureBoard.Departure[0];
 
@@ -22,7 +22,6 @@ function getBusData() {
             const buses = document.getElementById('buses');
             departures.forEach(departure => {
                 const row = document.createElement('div');
-                // Adjust these fields according to the actual response structure
                 row.classList.toggle('buscard');
 
                 if (departure === nextBus) {
