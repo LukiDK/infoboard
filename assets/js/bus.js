@@ -15,12 +15,14 @@ function getBusData() {
 
             if (!departures) {
                 console.error('Ingen buser fundet.');
-                document.getElementById('buses').innerHTML = '<p colspan="4">Ingen Data.</p><';
+                document.getElementById('buses').innerHTML = '<p colspan="4">Ingen Data.</p>';
                 return;
             }
 
             const buses = document.getElementById('buses');
-            departures.forEach(departure => {
+            const limitedDepartures = departures.slice(0, 12);
+
+            limitedDepartures.forEach(departure => {
                 const row = document.createElement('div');
                 row.classList.toggle('buscard');
 

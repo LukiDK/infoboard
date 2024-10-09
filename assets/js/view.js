@@ -81,7 +81,7 @@ export function renderMeals(meals) {
 function displayTimeDate() {
   var { time, dateTime } = getTimeDate();
   document.getElementById(
-    "clock"
+    "time"
   ).innerHTML = `<p class="time">${time}</p><p class="date">${dateTime}</p>`;
 }
 

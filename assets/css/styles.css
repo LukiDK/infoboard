@@ -136,6 +136,7 @@ body {
 
 
 #clock {
+  position: relative;
   grid-column: 1 / 2; /* Span across the first two columns */
   grid-row: 2 / 3; /* Second row */
   display: flex;
@@ -157,9 +158,9 @@ body {
 }
 
 .outline-box-rounded {
-  border: 3px solid #e1c54b; /* Yellow border */
+  border: 3px solid #e1c54b;
   padding: 20px;
-  border-radius: 15px; /* Rounded corners */
-  background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent background */
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.1);
   color: white;
 }
