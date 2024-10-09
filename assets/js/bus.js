@@ -13,7 +13,7 @@ function getBusData() {
             const departures = data.MultiDepartureBoard.Departure;
 
             if (!departures) {
-                console.error('No departures found');
+                console.error('Ingen buser fundet.');
                 document.getElementById('buses').innerHTML = '<p colspan="4">Ingen Data.</p><';
                 return;
             }
