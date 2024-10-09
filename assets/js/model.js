@@ -1,3 +1,5 @@
+import { activityConfig } from "./configs/activity_config.js";
+
 // Model Code
 
 export const getData = async (url) => {
@@ -41,3 +43,27 @@ export function getTimeDate() {
   var dateTime = time + " " + day + " " + date;
   return { time, dateTime };
 }
+
+// Function to filter valid activities by using our config file
+export const filterValidActivities = (arr) => {
+  let filteredData = arr.filter((item) =>
+    activityConfig.validEducations.includes(item.Education)
+  );
+  return filteredData;
+};
+
+// Function to filter out the current activities from StartDate
+export const filterCurrentActivities = (arr) => {
+  let currentActivities = arr.filter(
+    (item) => new Date(item.StartDate) >= new Date() - 3600000
+  );
+  return currentActivities;
+};
+
+// Function to sort all activities by date / time
+export const sortActivities = (arr) => {
+  let sortedData = arr.sort(
+    (a, b) => new Date(a.StartDate) - new Date(b.StartDate)
+  );
+  return sortedData;
+};
