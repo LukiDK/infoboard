@@ -3,22 +3,28 @@
     width: fit-content;
     padding: 1rem;
     margin-top: 5rem;
-    border: 2px solid black;
+    border: 2px solid #e1c54b;
     border-radius: 8px;
 }
 
-.nextbus {
-    display: flex;
-    background-color: yellow;
-    font-family: '';
+.buscard {
+    background-color: white;
+    border-radius: 8px;
+    margin: 0.5rem;
 }
 
-.buscard {
-    
+.buscard p {
+    margin: 0.5rem;
+}
+
+.nextbus {
+    background-color: yellow;
+    margin: 0.5rem;
 }
 
 i {
     position: absolute;
+    color: #e1c54b;
     font-size: 5rem;
     left: 40%;
     top: -7%;
