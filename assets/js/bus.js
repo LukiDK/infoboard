@@ -27,7 +27,7 @@ function getBusData() {
 
                 if (departure === nextBus) {
                     row.classList.add('nextbus');
-                    row.innerHTML = `<p>${departure.name + ' ' + departure.type + ' ' + departure.stop + ' ' + departure.time || 'N/A'}</p>`;
+                    row.innerHTML = `<p><b>${departure.name + ' ' + departure.type + ' ' + departure.stop + ' ' + departure.time || 'N/A'}</b></p>`;
                 
                 } else {
                     row.innerHTML = `
