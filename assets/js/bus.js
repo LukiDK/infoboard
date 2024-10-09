@@ -44,7 +44,7 @@ function getRejseplan() {
                     console.table(data);
                 });
             } else {
-                container.textContent = "Ingen buser fundet.";
+                container.textContent = "Er ikke en Array.";
                 console.table(data);
             }
         })
